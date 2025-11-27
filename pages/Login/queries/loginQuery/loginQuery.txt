@@ -1,0 +1,13 @@
+SELECT 
+  u.id,
+  u.login,
+  u.primeiro_nome,
+	u.sobre_nome,
+  u.senha,
+	u.email,
+  u.id_filial,
+  f.nome_filial   -- <-- nome correto!
+FROM login_user u
+LEFT JOIN filial f ON f.id = u.id_filial
+WHERE u.login = {{ inp_login_01.text }}
+  AND u.senha = {{ inp_login_02.text }};

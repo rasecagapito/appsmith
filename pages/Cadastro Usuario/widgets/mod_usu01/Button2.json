@@ -1,0 +1,56 @@
+{
+  "animateLoading": true,
+  "borderRadius": "{{appsmith.theme.borderRadius.appBorderRadius}}",
+  "bottomRow": 34,
+  "boxShadow": "none",
+  "buttonColor": "{{appsmith.theme.colors.primaryColor}}",
+  "buttonStyle": "PRIMARY_BUTTON",
+  "buttonVariant": "PRIMARY",
+  "disabledWhenInvalid": false,
+  "dynamicBindingPathList": [
+    {
+      "key": "buttonColor"
+    },
+    {
+      "key": "borderRadius"
+    }
+  ],
+  "dynamicPropertyPathList": [
+    {
+      "key": "onClick"
+    }
+  ],
+  "dynamicTriggerPathList": [
+    {
+      "key": "onClick"
+    }
+  ],
+  "isDefaultClickDisabled": true,
+  "isDisabled": false,
+  "isLoading": false,
+  "isVisible": true,
+  "key": "25v6otp4pw",
+  "leftColumn": 30,
+  "minWidth": 120,
+  "mobileBottomRow": 22,
+  "mobileLeftColumn": 47,
+  "mobileRightColumn": 63,
+  "mobileTopRow": 18,
+  "needsErrorInfo": false,
+  "onClick": "{{\n(async () => {\n  if (\n    !input_login.isValid   ||\n    !inp_nome.isValid      ||\n    !inp_email.isValid     ||\n    !inp_sobrenome.isValid ||\n    !inp_senha.isValid     ||\n    !sel_filial.isValid\n  ) {\n    showAlert(\"Preencha todos os campos obrigatórios.\", \"error\");\n    return;\n  }\n\n  try {\n    await insert_usuario.run();\n    showAlert(\"Usuário salvo com sucesso!\", \"success\");\n    resetWidget(\"input_login\", true);\n    resetWidget(\"inp_nome\", true);\n    resetWidget(\"inp_sobrenome\", true);\n    resetWidget(\"inp_email\", true);\n    resetWidget(\"inp_senha\", true);\n    resetWidget(\"sel_filial\", true);\n    closeModal(\"ModalCadastroUsuario\");\n  } catch (e) {\n    const msg =\n      e?.responseMeta?.error?.message ||\n      e?.message ||\n      \"veja os Logs da query\";\n    showAlert(\"Erro ao salvar: \" + msg, \"error\");\n  }\n})()\n}}\n",
+  "originalBottomRow": 41,
+  "originalTopRow": 37,
+  "parentId": "h8n7iyvzl4",
+  "placement": "CENTER",
+  "recaptchaType": "V3",
+  "renderMode": "CANVAS",
+  "resetFormOnClick": false,
+  "responsiveBehavior": "hug",
+  "rightColumn": 46,
+  "text": "Confirm",
+  "topRow": 30,
+  "type": "BUTTON_WIDGET",
+  "version": 1,
+  "widgetId": "20jj53ztsy",
+  "widgetName": "Button2"
+}

@@ -1,0 +1,3 @@
+SELECT id, nome_filial
+FROM public.filial
+ORDER BY nome_filial;

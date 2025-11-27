@@ -1,0 +1,54 @@
+{
+  "animateLoading": true,
+  "borderRadius": "{{appsmith.theme.borderRadius.appBorderRadius}}",
+  "bottomRow": 31,
+  "boxShadow": "none",
+  "buttonColor": "#18181b",
+  "buttonVariant": "PRIMARY",
+  "disabledWhenInvalid": false,
+  "dynamicBindingPathList": [
+    {
+      "key": "borderRadius"
+    }
+  ],
+  "dynamicPropertyPathList": [
+    {
+      "key": "onClick"
+    }
+  ],
+  "dynamicTriggerPathList": [
+    {
+      "key": "onClick"
+    }
+  ],
+  "isDefaultClickDisabled": true,
+  "isDisabled": false,
+  "isLoading": false,
+  "isVisible": true,
+  "key": "a0q0dq65sq",
+  "leftColumn": 13,
+  "minWidth": 120,
+  "mobileBottomRow": 34,
+  "mobileLeftColumn": 24,
+  "mobileRightColumn": 40,
+  "mobileTopRow": 30,
+  "needsErrorInfo": false,
+  "onClick": "{{ \nloginQuery.run(() => {\n  if(loginQuery.data.length > 0){\n    storeValue(\"usuario\", loginQuery.data[0]);\n    navigateTo(\"Principal\");\n  } else {\n    showAlert(\"Usuário ou senha incorretos\",\"error\");\n  }\n})\n}}",
+  "originalBottomRow": 32,
+  "originalTopRow": 28,
+  "parentColumnSpace": 5.737236887216568,
+  "parentId": "e30qf1b8f8",
+  "parentRowSpace": 10,
+  "placement": "CENTER",
+  "recaptchaType": "V3",
+  "renderMode": "CANVAS",
+  "resetFormOnClick": false,
+  "responsiveBehavior": "hug",
+  "rightColumn": 54,
+  "text": "Entrar",
+  "topRow": 27,
+  "type": "BUTTON_WIDGET",
+  "version": 1,
+  "widgetId": "94xb3cpqae",
+  "widgetName": "btn_login_01"
+}

@@ -1,0 +1,10 @@
+SELECT
+  *
+FROM
+  public.login_user
+ORDER BY
+  "{{tab_login.sortOrder.column || 'id'}}" {{tab_login.sortOrder.order !== "desc" ? "" : "DESC"}}
+LIMIT
+  {{tab_login.pageSize}}
+OFFSET
+  {{tab_login.pageOffset}}
