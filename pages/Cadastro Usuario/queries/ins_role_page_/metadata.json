@@ -1,11 +1,11 @@
 {
-  "gitSyncId": "6923403bd7195f32532b3740_e9c41cab-dfc4-489f-885e-805e43e4662a",
-  "id": "Cadastro Usuario_login_stasus",
+  "gitSyncId": "6923403bd7195f32532b3740_5eb3fbec-8bb6-4efb-9fce-778d4ee08580",
+  "id": "Cadastro Usuario_ins_role_page_",
   "pluginId": "postgres-plugin",
   "pluginType": "DB",
   "unpublishedAction": {
     "actionConfiguration": {
-      "body": "SELECT\n  u.id,\n  u.login,\n  u.primeiro_nome,\n  u.sobre_nome,\n  u.id_filial,\n  u.status,\n  COALESCE(\n    array_agg(r.codigo) FILTER (WHERE r.codigo IS NOT NULL),\n    '{}'\n  ) AS roles\nFROM login_user u\nLEFT JOIN user_role ur ON ur.user_id = u.id\nLEFT JOIN role r      ON r.id = ur.role_id\nWHERE u.login = {{ inp_login.text }}\n  AND u.senha = {{ inp_senha.text }}\n  AND u.status = true\nGROUP BY u.id;\n",
+      "body": "INSERT INTO role_page (role_id, page_id)\nSELECT {{ tbl_roles.selectedRow.id }}, p.id\nFROM page p\nWHERE p.codigo = {{ this.params.pageCodigo }}\nON CONFLICT DO NOTHING;\n",
       "encodeParamsToggle": true,
       "paginationType": "NONE",
       "pluginSpecifiedTemplates": [
@@ -27,9 +27,9 @@
         "key": "body"
       }
     ],
-    "name": "login_stasus",
+    "name": "ins_role_page_",
     "pageId": "Cadastro Usuario",
-    "runBehaviour": "AUTOMATIC",
+    "runBehaviour": "MANUAL",
     "userSetOnLoad": false
   }
 }

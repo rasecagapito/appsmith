@@ -1,0 +1,2 @@
+DELETE FROM user_role
+WHERE user_id = {{ tbl_usuarios.selectedRow.id }};

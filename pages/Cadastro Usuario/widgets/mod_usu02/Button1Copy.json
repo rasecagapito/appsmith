@@ -38,9 +38,9 @@
   "mobileTopRow": 18,
   "needsErrorInfo": false,
   "onClick": "{{ UsuarioJS.limparFormUsuario() }}",
-  "originalBottomRow": 34,
-  "originalTopRow": 30,
-  "parentId": "h8n7iyvzl4",
+  "originalBottomRow": 41,
+  "originalTopRow": 37,
+  "parentId": "ti7kcmpfm0",
   "placement": "CENTER",
   "recaptchaType": "V3",
   "renderMode": "CANVAS",
@@ -51,6 +51,6 @@
   "topRow": 37,
   "type": "BUTTON_WIDGET",
   "version": 1,
-  "widgetId": "2cftvikoko",
-  "widgetName": "Button1"
+  "widgetId": "x396f6va0m",
+  "widgetName": "Button1Copy"
 }

@@ -1,0 +1,5 @@
+INSERT INTO user_role (user_id, role_id)
+SELECT {{ tbl_usuarios.selectedRow.id }}, r.id
+FROM role r
+WHERE r.codigo = {{ this.params.roleCodigo }}
+ON CONFLICT DO NOTHING;

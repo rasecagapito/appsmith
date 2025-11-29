@@ -1,0 +1,5 @@
+INSERT INTO role_page (role_id, page_id)
+SELECT {{ tbl_roles.selectedRow.id }}, p.id
+FROM page p
+WHERE p.codigo = {{ this.params.pageCodigo }}
+ON CONFLICT DO NOTHING;

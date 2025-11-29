@@ -1,0 +1,3 @@
+SELECT id, login, primeiro_nome, sobre_nome, id_filial, status
+FROM login_user
+ORDER BY login;

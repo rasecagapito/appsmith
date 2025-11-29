@@ -1,0 +1,4 @@
+SELECT p.codigo
+FROM role_page rp
+JOIN page p ON p.id = rp.page_id
+WHERE rp.role_id = {{ tbl_roles.selectedRow.id }};

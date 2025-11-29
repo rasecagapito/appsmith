@@ -31,15 +31,7 @@
       "isDefault": true
     },
     {
-      "id": "Principal",
-      "isDefault": false
-    },
-    {
       "id": "Cadastro Usuario",
-      "isDefault": false
-    },
-    {
-      "id": "Cargas",
       "isDefault": false
     }
   ],

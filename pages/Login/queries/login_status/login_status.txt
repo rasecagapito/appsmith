@@ -12,7 +12,7 @@ SELECT
 FROM login_user u
 LEFT JOIN user_role ur ON ur.user_id = u.id
 LEFT JOIN role r      ON r.id = ur.role_id
-WHERE u.login = {{ inp_login.text }}
-  AND u.senha = {{ inp_senha.text }}
+WHERE u.login = {{ inp_login_01.text }}
+  AND u.senha = {{ inp_login_02.text }}
   AND u.status = true
 GROUP BY u.id;

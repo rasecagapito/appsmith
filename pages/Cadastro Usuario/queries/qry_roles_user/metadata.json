@@ -1,11 +1,11 @@
 {
-  "gitSyncId": "6923403bd7195f32532b3740_e9c41cab-dfc4-489f-885e-805e43e4662a",
-  "id": "Cadastro Usuario_login_stasus",
+  "gitSyncId": "6923403bd7195f32532b3740_ab819811-f090-4970-b685-7ed5f609a52a",
+  "id": "Cadastro Usuario_qry_roles_user",
   "pluginId": "postgres-plugin",
   "pluginType": "DB",
   "unpublishedAction": {
     "actionConfiguration": {
-      "body": "SELECT\n  u.id,\n  u.login,\n  u.primeiro_nome,\n  u.sobre_nome,\n  u.id_filial,\n  u.status,\n  COALESCE(\n    array_agg(r.codigo) FILTER (WHERE r.codigo IS NOT NULL),\n    '{}'\n  ) AS roles\nFROM login_user u\nLEFT JOIN user_role ur ON ur.user_id = u.id\nLEFT JOIN role r      ON r.id = ur.role_id\nWHERE u.login = {{ inp_login.text }}\n  AND u.senha = {{ inp_senha.text }}\n  AND u.status = true\nGROUP BY u.id;\n",
+      "body": "SELECT r.codigo\nFROM user_role ur\nJOIN role r ON r.id = ur.role_id\nWHERE ur.user_id = {{ tbl_usuarios.selectedRow.id }};\n",
       "encodeParamsToggle": true,
       "paginationType": "NONE",
       "pluginSpecifiedTemplates": [
@@ -27,7 +27,7 @@
         "key": "body"
       }
     ],
-    "name": "login_stasus",
+    "name": "qry_roles_user",
     "pageId": "Cadastro Usuario",
     "runBehaviour": "AUTOMATIC",
     "userSetOnLoad": false

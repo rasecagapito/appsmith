@@ -1,3 +1,0 @@
-UPDATE public.login_user
-SET status = NOT status
-WHERE id = {{ this.params.id }};

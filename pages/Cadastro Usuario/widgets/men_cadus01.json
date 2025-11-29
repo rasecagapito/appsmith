@@ -36,12 +36,20 @@
   "menuItems": {
     "menuItem1": {
       "id": "menuItem1",
-      "index": 0,
+      "index": 1,
       "isDisabled": false,
       "isVisible": true,
       "label": "Cadastrar Usuário",
       "onClick": "{{ showModal(\"mod_usu01\") }}\n",
       "widgetId": ""
+    },
+    "menuItemal3wqf8jvg": {
+      "id": "menuItemal3wqf8jvg",
+      "index": 0,
+      "isDisabled": false,
+      "isVisible": true,
+      "label": "Perfil de Usuario",
+      "widgetId": "84och8qptw"
     }
   },
   "menuItemsSource": "STATIC",

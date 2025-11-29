@@ -1,0 +1,3 @@
+SELECT id, codigo, nome, path
+FROM page
+ORDER BY nome;

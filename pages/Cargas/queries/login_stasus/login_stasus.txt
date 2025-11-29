@@ -1,9 +1,0 @@
-SELECT
-  id,
-  login,
-  primeiro_nome,
-  sobre_nome,
-  senha,
-  email,
-  status
-FROM public.login_user;

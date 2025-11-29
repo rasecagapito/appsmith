@@ -1,0 +1,27 @@
+SELECT
+  u.id,
+  u.email,
+  u.login,
+  u.primeiro_nome,
+  u.sobre_nome,
+  u.id_filial,
+  f.nome_filial,
+  COALESCE(
+    array_agg(r.codigo) FILTER (WHERE r.codigo IS NOT NULL),
+    '{}'
+  ) AS roles
+FROM login_user u
+LEFT JOIN filial f      ON f.id = u.id_filial
+LEFT JOIN user_role ur  ON ur.user_id = u.id
+LEFT JOIN role r        ON r.id = ur.role_id
+WHERE u.login = {{ inp_login_01.text }}
+  AND u.senha = {{ inp_login_02.text }}
+  AND u.status = true
+GROUP BY
+  u.id,
+  u.email,
+  u.login,
+  u.primeiro_nome,
+  u.sobre_nome,
+  u.id_filial,
+  f.nome_filial;

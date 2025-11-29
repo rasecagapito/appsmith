@@ -1,0 +1,3 @@
+SELECT ur.role_id
+FROM user_role ur
+WHERE ur.user_id = {{ tbl_usuarios.selectedRow.id }};
